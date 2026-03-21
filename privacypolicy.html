@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — FrameGrab</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream:#f5f0e8; --cream2:#ede7d9;
+  --espresso:#1a1208; --bark:#2e2014;
+  --amber:#c4790a; --amber-l:#e8960e;
+  --ink:#2c1f0e; --ink2:#6b5440; --ink3:#a08060;
+  --border:rgba(44,31,14,.12); --border2:rgba(44,31,14,.22);
+  --card:#fff;
+  --shadow:0 2px 16px rgba(26,18,8,.08);
+  --shadow-lg:0 8px 40px rgba(26,18,8,.14);
+}
+*, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+html { scroll-behavior:smooth; }
+body {
+  font-family:'Bricolage Grotesque',sans-serif;
+  background:var(--cream);
+  color:var(--ink);
+  min-height:100vh;
+  -webkit-font-smoothing:antialiased;
+  line-height:1.75;
+}
+
+/* ── NAV ── */
+nav {
+  position:sticky; top:0; z-index:60;
+  background:rgba(245,240,232,.96);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--border2);
+  display:flex; align-items:center; justify-content:space-between;
+  padding:0 32px; height:62px;
+}
+.nav-brand { display:flex; align-items:baseline; gap:7px; text-decoration:none; }
+.nav-logo {
+  font-family:'Playfair Display',serif;
+  font-size:22px; font-weight:700;
+  color:var(--espresso); letter-spacing:-.5px;
+}
+.nav-tag {
+  font-family:'JetBrains Mono',monospace; font-size:10px;
+  color:var(--ink3); border:1px solid var(--border2);
+  padding:2px 7px; border-radius:20px;
+}
+.nav-back {
+  font-family:'Bricolage Grotesque',sans-serif; font-size:13px; font-weight:500;
+  color:var(--ink2); text-decoration:none; display:flex; align-items:center; gap:5px;
+  padding:6px 14px; border:1px solid var(--border2); border-radius:6px;
+  transition:all .15s;
+}
+.nav-back:hover { background:var(--cream2); color:var(--espresso); }
+
+/* ── HERO ── */
+.pp-hero {
+  background:linear-gradient(135deg, var(--espresso) 0%, #2e1c08 100%);
+  padding:64px 32px 52px;
+  text-align:center;
+}
+.pp-eyebrow {
+  font-family:'JetBrains Mono',monospace; font-size:11px;
+  letter-spacing:3px; text-transform:uppercase;
+  color:var(--amber); margin-bottom:14px;
+  display:inline-flex; align-items:center; gap:8px;
+}
+.pp-eyebrow::before, .pp-eyebrow::after {
+  content:''; width:24px; height:1px; background:var(--amber);
+}
+.pp-hero h1 {
+  font-family:'Playfair Display',serif;
+  font-size:clamp(32px,5vw,50px); font-weight:700; line-height:1.1;
+  color:#f5f0e8; letter-spacing:-1px; margin-bottom:14px;
+}
+.pp-hero h1 em { font-style:italic; color:var(--amber); }
+.pp-meta {
+  font-family:'JetBrains Mono',monospace; font-size:12px;
+  color:rgba(245,240,232,.4); display:flex; gap:20px;
+  justify-content:center; flex-wrap:wrap; margin-top:16px;
+}
+.pp-meta span { display:flex; align-items:center; gap:5px; }
+
+/* ── LAYOUT ── */
+.pp-wrap {
+  max-width:800px; margin:0 auto;
+  padding:52px 32px 80px;
+}
+
+/* ── TOC ── */
+.toc {
+  background:var(--card); border:1px solid var(--border2);
+  border-radius:10px; padding:22px 26px;
+  margin-bottom:48px;
+  box-shadow:var(--shadow);
+}
+.toc-title {
+  font-family:'JetBrains Mono',monospace; font-size:10px;
+  letter-spacing:2.5px; text-transform:uppercase;
+  color:var(--ink3); margin-bottom:14px;
+  padding-bottom:10px; border-bottom:1px solid var(--border);
+}
+.toc ol {
+  list-style:none; counter-reset:toc-counter;
+  display:grid; grid-template-columns:1fr 1fr;
+  gap:6px 24px;
+}
+@media(max-width:500px){ .toc ol { grid-template-columns:1fr; } }
+.toc li { counter-increment:toc-counter; }
+.toc a {
+  font-size:13px; color:var(--ink2); text-decoration:none;
+  display:flex; align-items:baseline; gap:7px;
+  padding:4px 6px; border-radius:5px; transition:all .14s;
+}
+.toc a::before {
+  content:counter(toc-counter,decimal-leading-zero);
+  font-family:'JetBrains Mono',monospace; font-size:10px;
+  color:var(--amber); flex-shrink:0;
+}
+.toc a:hover { background:var(--cream2); color:var(--espresso); }
+
+/* ── SECTIONS ── */
+.pp-section {
+  margin-bottom:44px;
+  scroll-margin-top:80px;
+}
+.pp-section-num {
+  font-family:'JetBrains Mono',monospace; font-size:11px;
+  color:var(--amber); letter-spacing:1px; margin-bottom:6px;
+}
+.pp-section h2 {
+  font-family:'Playfair Display',serif;
+  font-size:26px; font-weight:700;
+  color:var(--espresso); margin-bottom:16px;
+  padding-bottom:12px; border-bottom:1px solid var(--border2);
+}
+.pp-section p {
+  font-size:14px; color:var(--ink2);
+  margin-bottom:13px; line-height:1.8;
+}
+.pp-section ul, .pp-section ol {
+  font-size:14px; color:var(--ink2);
+  padding-left:18px; margin-bottom:13px;
+  display:flex; flex-direction:column; gap:7px;
+}
+.pp-section li { line-height:1.7; }
+.pp-section strong { color:var(--espresso); font-weight:600; }
+.pp-section a { color:var(--amber); text-decoration:none; }
+.pp-section a:hover { text-decoration:underline; }
+
+/* ── HIGHLIGHT BOXES ── */
+.pp-box {
+  border-radius:8px; padding:16px 18px;
+  margin:18px 0; font-size:13px; line-height:1.7;
+}
+.pp-box.green {
+  background:rgba(74,124,89,.07);
+  border:1px solid rgba(74,124,89,.25);
+  color:#2e5c3a;
+}
+.pp-box.amber {
+  background:rgba(196,121,10,.08);
+  border:1px solid rgba(196,121,10,.25);
+  color:#7a4c05;
+}
+.pp-box.blue {
+  background:rgba(59,130,246,.07);
+  border:1px solid rgba(59,130,246,.2);
+  color:#1e40af;
+}
+.pp-box strong { font-weight:600; }
+
+/* ── CONTACT CARD ── */
+.contact-card {
+  background:var(--espresso); border-radius:10px;
+  padding:28px 30px; color:rgba(245,240,232,.85);
+  margin-top:20px;
+}
+.contact-card h3 {
+  font-family:'Playfair Display',serif; font-size:20px;
+  color:#f5f0e8; margin-bottom:8px;
+}
+.contact-card p { font-size:13px; line-height:1.7; margin-bottom:14px; }
+.contact-card a {
+  color:var(--amber); text-decoration:none;
+  font-family:'JetBrains Mono',monospace; font-size:13px;
+}
+.contact-card a:hover { color:var(--amber-l); text-decoration:underline; }
+
+/* ── FOOTER ── */
+footer {
+  background:var(--espresso);
+  border-top:1px solid rgba(196,121,10,.2);
+  padding:22px 32px;
+}
+.footer-inner {
+  max-width:800px; margin:0 auto;
+  display:flex; align-items:center; justify-content:space-between;
+  flex-wrap:wrap; gap:10px;
+}
+.footer-brand {
+  font-family:'Playfair Display',serif; font-size:16px;
+  font-weight:700; color:rgba(245,240,232,.8);
+}
+.footer-note {
+  font-size:12px; color:rgba(245,240,232,.3);
+  font-family:'JetBrains Mono',monospace;
+}
+.footer-links { display:flex; gap:16px; }
+.footer-links a {
+  font-size:12px; color:rgba(245,240,232,.4);
+  text-decoration:none; transition:color .15s;
+}
+.footer-links a:hover { color:var(--amber); }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-brand" href="/">
+    <span class="nav-logo">FrameGrab</span>
+    <span class="nav-tag">v6</span>
+  </a>
+  <a class="nav-back" href="/">
+    ← Back to App
+  </a>
+</nav>
+
+<!-- HERO -->
+<div class="pp-hero">
+  <div class="pp-eyebrow">Legal</div>
+  <h1>Privacy <em>Policy</em></h1>
+  <div class="pp-meta">
+    <span>📅 Effective: June 2025</span>
+    <span>📝 Last Updated: June 2025</span>
+    <span>🌐 framegrab.app</span>
+  </div>
+</div>
+
+<!-- CONTENT -->
+<div class="pp-wrap">
+
+  <div class="pp-box green">
+    <strong>Short version:</strong> FrameGrab processes everything in your browser. We do not collect, store, or sell your personal data. Screenshots never leave your device unless you explicitly save or download them.
+  </div>
+
+  <!-- TOC -->
+  <div class="toc">
+    <div class="toc-title">Table of Contents</div>
+    <ol>
+      <li><a href="#s1">Who We Are</a></li>
+      <li><a href="#s2">What Data We Collect</a></li>
+      <li><a href="#s3">How We Use Your Data</a></li>
+      <li><a href="#s4">Local Storage</a></li>
+      <li><a href="#s5">Third-Party Services</a></li>
+      <li><a href="#s6">Google AdSense &amp; Cookies</a></li>
+      <li><a href="#s7">YouTube API</a></li>
+      <li><a href="#s8">Children's Privacy</a></li>
+      <li><a href="#s9">Your Rights</a></li>
+      <li><a href="#s10">Data Security</a></li>
+      <li><a href="#s11">Changes to This Policy</a></li>
+      <li><a href="#s12">Contact Us</a></li>
+    </ol>
+  </div>
+
+  <!-- 1 -->
+  <div class="pp-section" id="s1">
+    <div class="pp-section-num">01</div>
+    <h2>Who We Are</h2>
+    <p><strong>FrameGrab</strong> ("we", "us", "our") is a browser-based YouTube screenshot and note-taking tool available at <a href="/">framegrab.app</a>. FrameGrab allows users to capture video frames, annotate screenshots, and generate AI-powered notes from YouTube videos entirely within their own browser.</p>
+    <p>This Privacy Policy explains how we handle information when you use FrameGrab.</p>
+  </div>
+
+  <!-- 2 -->
+  <div class="pp-section" id="s2">
+    <div class="pp-section-num">02</div>
+    <h2>What Data We Collect</h2>
+    <p>FrameGrab is designed with a <strong>privacy-first</strong> approach. Here is a complete breakdown of what is and is not collected:</p>
+
+    <div class="pp-box green">
+      <strong>✓ We do NOT collect:</strong><br>
+      Your name, email address, or any account information · Screenshots or video frames you capture · AI notes generated in your session · YouTube URLs you paste · Your IP address (by FrameGrab directly) · Any personally identifiable information
+    </div>
+
+    <div class="pp-box amber">
+      <strong>ℹ What is processed locally in your browser:</strong><br>
+      Screenshots captured via screen-share API · AI-generated notes (sent to Anthropic's API only if you provide your own API key) · Session data saved to your browser's localStorage · Your API key (stored in localStorage on your device only)
+    </div>
+
+    <p>We may collect <strong>anonymised, aggregated analytics</strong> (such as page views and general geographic region) through third-party tools like Google Analytics or AdSense. This data cannot be used to identify you personally.</p>
+  </div>
+
+  <!-- 3 -->
+  <div class="pp-section" id="s3">
+    <div class="pp-section-num">03</div>
+    <h2>How We Use Your Data</h2>
+    <p>Any data processed by FrameGrab is used exclusively to:</p>
+    <ul>
+      <li>Render the application and provide its core features (screenshot capture, AI notes, gallery)</li>
+      <li>Save your session locally so you can resume where you left off (via localStorage)</li>
+      <li>Display relevant advertisements through Google AdSense to support the free service</li>
+      <li>Analyse aggregate site usage to improve the product (via anonymised analytics, if applicable)</li>
+    </ul>
+    <p>We do <strong>not</strong> sell, rent, trade, or share your personal data with any third party for marketing purposes.</p>
+  </div>
+
+  <!-- 4 -->
+  <div class="pp-section" id="s4">
+    <div class="pp-section-num">04</div>
+    <h2>Local Storage &amp; Session Data</h2>
+    <p>FrameGrab uses your browser's <strong>localStorage</strong> to save:</p>
+    <ul>
+      <li>Your most recent session (video ID and captured screenshots) — so you can restore it on next visit</li>
+      <li>Your dark/light mode preference</li>
+      <li>Whether you have dismissed the disclaimer banner</li>
+      <li>Your Anthropic API key (if you choose to enter one) — stored only on your device, never transmitted to FrameGrab's servers</li>
+    </ul>
+    <p>This data never leaves your browser and is not accessible to us. You can clear it at any time by clearing your browser's site data or using the <strong>↺ Reset</strong> button in the app.</p>
+    <div class="pp-box blue">
+      <strong>Note on API Keys:</strong> If you provide an Anthropic API key to enable AI notes, that key is stored in your browser's localStorage and is sent directly from your browser to <a href="https://api.anthropic.com" target="_blank" rel="noopener">api.anthropic.com</a> only. FrameGrab's servers never receive or store your API key.
+    </div>
+  </div>
+
+  <!-- 5 -->
+  <div class="pp-section" id="s5">
+    <div class="pp-section-num">05</div>
+    <h2>Third-Party Services</h2>
+    <p>FrameGrab integrates with the following third-party services. Each has its own privacy policy:</p>
+    <ul>
+      <li><strong>YouTube (Google LLC)</strong> — Videos are embedded via the YouTube IFrame Player API. Your interaction with the embedded player is subject to <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a> and <a href="https://www.youtube.com/t/terms" target="_blank" rel="noopener">YouTube's Terms of Service</a>.</li>
+      <li><strong>Anthropic</strong> — If you choose to enter an Anthropic API key, AI note requests are sent directly from your browser to Anthropic's API endpoint. See <a href="https://www.anthropic.com/privacy" target="_blank" rel="noopener">Anthropic's Privacy Policy</a>.</li>
+      <li><strong>Google AdSense</strong> — We use Google AdSense to display advertisements. See Section 6 for details.</li>
+      <li><strong>Google Fonts</strong> — Fonts are loaded from Google's CDN. Google may collect limited data as part of this request. See <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>.</li>
+      <li><strong>Cloudflare CDN</strong> — Some JavaScript libraries (e.g. JSZip) are loaded from Cloudflare's CDN. See <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Cloudflare's Privacy Policy</a>.</li>
+    </ul>
+  </div>
+
+  <!-- 6 -->
+  <div class="pp-section" id="s6">
+    <div class="pp-section-num">06</div>
+    <h2>Google AdSense &amp; Cookies</h2>
+    <p>FrameGrab uses <strong>Google AdSense</strong> to display advertisements. Google AdSense uses cookies and similar tracking technologies to serve personalised ads based on your browsing history and interests.</p>
+    <p>Specifically, Google may:</p>
+    <ul>
+      <li>Use cookies to track your visits to FrameGrab and other websites</li>
+      <li>Use the DoubleClick cookie to serve ads based on your prior visits to websites</li>
+      <li>Collect data such as your IP address, browser type, and pages visited</li>
+    </ul>
+    <p>You can <strong>opt out</strong> of personalised advertising by visiting <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener">Google's Ad Settings</a> or <a href="https://optout.aboutads.info/" target="_blank" rel="noopener">aboutads.info</a>.</p>
+    <p>For more information, see <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">Google's Advertising Policies</a>.</p>
+    <div class="pp-box amber">
+      <strong>Cookie Notice:</strong> By using FrameGrab, you consent to the use of cookies by Google AdSense for advertising purposes as described above. You may disable cookies in your browser settings, though this may affect ad personalisation.
+    </div>
+  </div>
+
+  <!-- 7 -->
+  <div class="pp-section" id="s7">
+    <div class="pp-section-num">07</div>
+    <h2>YouTube API Services</h2>
+    <p>FrameGrab uses the <strong>YouTube IFrame Player API</strong> to embed and interact with YouTube videos. By using FrameGrab, you are also bound by:</p>
+    <ul>
+      <li><a href="https://www.youtube.com/t/terms" target="_blank" rel="noopener">YouTube Terms of Service</a></li>
+      <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a></li>
+    </ul>
+    <p>FrameGrab does not access, store, or transmit any video content from YouTube. All video data remains within the embedded YouTube player controlled by Google.</p>
+    <p><strong>Important:</strong> Capturing screenshots of YouTube videos may be subject to copyright restrictions. You are solely responsible for ensuring your use of captured content complies with applicable law and YouTube's Terms of Service.</p>
+  </div>
+
+  <!-- 8 -->
+  <div class="pp-section" id="s8">
+    <div class="pp-section-num">08</div>
+    <h2>Children's Privacy</h2>
+    <p>FrameGrab is not directed at children under the age of <strong>13</strong> (or 16 in the European Economic Area). We do not knowingly collect personal information from children.</p>
+    <p>If you are a parent or guardian and believe your child has used FrameGrab in a way that has provided personal data, please contact us at the address below and we will take appropriate steps.</p>
+  </div>
+
+  <!-- 9 -->
+  <div class="pp-section" id="s9">
+    <div class="pp-section-num">09</div>
+    <h2>Your Rights</h2>
+    <p>Depending on your location, you may have the following rights regarding your data:</p>
+    <ul>
+      <li><strong>Right of access</strong> — you can request a copy of any personal data we hold about you</li>
+      <li><strong>Right to erasure</strong> — you can request deletion of your data</li>
+      <li><strong>Right to object</strong> — you can object to processing of your data for advertising purposes</li>
+      <li><strong>Right to data portability</strong> — you can request your data in a portable format</li>
+    </ul>
+    <p>Since FrameGrab stores virtually all data locally in your browser, you can exercise most of these rights yourself by clearing your browser's site data. For any requests regarding third-party data (e.g. Google AdSense), please contact those services directly.</p>
+    <p>For any other requests, contact us using the details in Section 12.</p>
+  </div>
+
+  <!-- 10 -->
+  <div class="pp-section" id="s10">
+    <div class="pp-section-num">10</div>
+    <h2>Data Security</h2>
+    <p>Because FrameGrab processes data entirely within your browser:</p>
+    <ul>
+      <li>No screenshots or notes are transmitted to or stored on FrameGrab's servers</li>
+      <li>Your API key is stored only in your browser's localStorage and transmitted only to Anthropic directly over HTTPS</li>
+      <li>Session data is stored only on your device</li>
+    </ul>
+    <p>We recommend keeping your browser and operating system up to date, and avoiding shared or public computers when using features that involve sensitive API keys.</p>
+  </div>
+
+  <!-- 11 -->
+  <div class="pp-section" id="s11">
+    <div class="pp-section-num">11</div>
+    <h2>Changes to This Policy</h2>
+    <p>We may update this Privacy Policy from time to time to reflect changes in the app's features, legal requirements, or third-party integrations. When we do:</p>
+    <ul>
+      <li>The "Last Updated" date at the top of this page will be revised</li>
+      <li>Significant changes will be highlighted with a notice on the FrameGrab homepage</li>
+    </ul>
+    <p>We encourage you to review this policy periodically. Continued use of FrameGrab after changes are posted constitutes your acceptance of the updated policy.</p>
+  </div>
+
+  <!-- 12 -->
+  <div class="pp-section" id="s12">
+    <div class="pp-section-num">12</div>
+    <h2>Contact Us</h2>
+    <p>If you have any questions, concerns, or requests regarding this Privacy Policy or your data, please get in touch:</p>
+    <div class="contact-card">
+      <h3>FrameGrab</h3>
+      <p>For privacy-related enquiries, please reach out via the contact details below. We aim to respond within 5 business days.</p>
+      <a href="mailto:privacy@framegrab.app">privacy@framegrab.app</a>
+    </div>
+  </div>
+
+</div><!-- end pp-wrap -->
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <span class="footer-brand">FrameGrab</span>
+    <div class="footer-links">
+      <a href="/">Home</a>
+      <a href="/privacypolicy.html">Privacy Policy</a>
+      <a href="mailto:privacy@framegrab.app">Contact</a>
+    </div>
+    <span class="footer-note">© 2025 FrameGrab. All rights reserved.</span>
+  </div>
+</footer>
+
+</body>
+</html>
